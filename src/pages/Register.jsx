@@ -20,6 +20,10 @@ const Register = () => {
     }))
   }
 
+  const onSubmit = (e) => {
+    e.preventDefault()
+  }
+
   return (
     <>
       <section className='heading'>
@@ -27,7 +31,7 @@ const Register = () => {
             <p>Por favor crea un Usuario</p>
       </section>
       <section className='form'>
-            <form>
+            <form onSubmit={onSubmit}>
                 <div className="form-group">
                   <input 
                       type="text"
@@ -38,6 +42,44 @@ const Register = () => {
                       placeholder='Ingresa tu Nombre'
                       onChange={onChange} 
                   />
+                </div>
+                <div className="form-group">
+                  <input 
+                      type="email"
+                      className='form-control'
+                      id='email'
+                      name='email'
+                      value={email}
+                      placeholder='Ingresa tu Email'
+                      onChange={onChange} 
+                  />
+                </div>
+                <div className="form-group">
+                  <input 
+                      type="password"
+                      className='form-control'
+                      id='password'
+                      name='password'
+                      value={password}
+                      placeholder='Ingresa tu Password'
+                      onChange={onChange} 
+                  />
+                </div>
+                <div className="form-group">
+                  <input 
+                      type="password"
+                      className='form-control'
+                      id='password2'
+                      name='password2'
+                      value={password2}
+                      placeholder='Confirma tu Password'
+                      onChange={onChange} 
+                  />
+                </div>
+                <div className='form-group'>
+                  <button type='submit' className='btn btn-block'>
+                      Crear
+                  </button>
                 </div>
             </form>
       </section>
